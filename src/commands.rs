@@ -100,6 +100,15 @@ pub fn unstudy(ctx: &mut Context, msg: &Message, args: Args) -> CommandResult {
     }
     Ok(())
 }
+group!({
+    name: "list",
+    options: {
+        required_permissions: [ADMINISTRATOR],
+        prefixes: ["courses"],
+    },
+    commands: [list],
+});
+
 
 group!({
     name: "courses",
@@ -107,7 +116,7 @@ group!({
         required_permissions: [ADMINISTRATOR],
         prefixes: ["courses"],
     },
-    commands: [mk, rm, list],
+    commands: [mk, rm],
 });
 
 #[command]
